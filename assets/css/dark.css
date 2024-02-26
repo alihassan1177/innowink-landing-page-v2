@@ -1,0 +1,15 @@
+.dark-theme {
+    --color-section-bg: #291554;
+    --color-hero-bg: #000000;
+    --color-purple : #4A2794;
+}
+
+.dark-theme,
+.dark-theme .text-dark {
+    color: white !important;
+}
+
+.dark-theme .contact-form input {
+    border-color: white;
+    color: white;
+}
