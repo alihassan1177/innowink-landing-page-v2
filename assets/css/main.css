@@ -25,9 +25,9 @@
     --color-pink: #E03C71;
     --color-orange: #F96233;
     --color-section-bg: white;
-    --color-hero-bg : white;
+    --color-hero-bg: white;
+    --header-menu-color : black;
 }
-
 
 * {
     padding: 0px;
@@ -473,11 +473,11 @@ button {
 
 @keyframes anim-rotate {
     from {
-        transform: rotate(0deg);
+        transform: translateY(-50%) rotate(0deg);
     }
 
     to {
-        transform: rotate(360deg);
+        transform: translateY(-50%) rotate(360deg);
     }
 }
 
@@ -491,35 +491,35 @@ button {
     transition: all 300ms ease-in-out;
 }
 
-.hero-container{
+.hero-container {
     padding-top: 200px;
 }
 
 
-#how-card{
+#how-card {
     min-width: 305px;
 }
 
-.how-it-works-heading{
+.how-it-works-heading {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 30px;
 }
 
-.project-card-btn{
+.project-card-btn {
     opacity: 0;
 }
 
-#project-card:hover .project-card-btn{
+#project-card:hover .project-card-btn {
     opacity: 1;
 }
 
-#project-card{
+#project-card {
     min-width: 450px;
 }
 
-.projects-heading{
+.projects-heading {
     position: absolute;
     top: 0px;
     left: 50%;
@@ -530,13 +530,54 @@ button {
     min-height: 200vh;
 }
 
-#project-card-wrapper{
+#project-card-wrapper {
     position: relative;
     gap: 60px;
     padding-top: 200px;
 }
 
-.how-card{
+.how-card {
     min-height: 180px;
+}
+
+.scroll-icon-wrapper {
+    width: 130px;
+    height: 130px;
+    position: relative;
+    /* border: 1px red solid; */
+}
+
+.arrow-icon {
+    width: 24px;
+}
+
+.arrow-up-icon {
+    transform: rotate(360deg);
+}
+
+.bottom-bar-icon {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY( -50%);
+    transition: all 200ms ease;
+}
+
+.header-menu {
+    position: fixed;
+    inset: 0;
+    background-color: var(--header-menu-color);
+    z-index: -10;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+}
+
+.header-menu.show {
+    z-index: 10;
+    opacity: 1;
+}
+
+header {
+    z-index: 100;
 }
 

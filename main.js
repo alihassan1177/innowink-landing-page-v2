@@ -46,10 +46,13 @@ document.body.classList.add(theme);
 
 colorToggleBtn.innerHTML = "";
 
+const attachBtn = document.querySelector('.attachment-btn')
 if (theme == "dark-theme") {
   colorToggleBtn.append(darkIcon);
+  attachBtn.classList.replace('btn-outline-dark', 'btn-outline-light')
 } else {
   colorToggleBtn.append(lightIcon);
+  attachBtn.classList.replace('btn-outline-light', 'btn-outline-dark')
 }
 
 colorToggleBtn.addEventListener("click", () => {
@@ -58,30 +61,63 @@ colorToggleBtn.addEventListener("click", () => {
     document.body.classList.replace("light-theme", "dark-theme");
     colorToggleBtn.append(darkIcon);
     localStorage.setItem("theme", "dark-theme");
-    scrollIcon.src = "./assets/images/scroll-to-explore-light.svg";
+    attachBtn.classList.replace('btn-outline-dark', 'btn-outline-light')
   } else {
     document.body.classList.replace("dark-theme", "light-theme");
     colorToggleBtn.append(lightIcon);
     localStorage.setItem("theme", "light-theme");
-    scrollIcon.src = "./assets/images/scroll-to-explore.svg";
+    attachBtn.classList.replace('btn-outline-light', 'btn-outline-dark')
   }
 });
 
-const scrollIcon = document.querySelector(".scroll-image");
+const exploreIcon = document.querySelector(".explore-icon");
+const arrowUpIcon = document.querySelector(".arrow-up-icon");
+const arrowDownIcon = document.querySelector(".arrow-down-icon");
 
-if (theme == "dark-theme") {
-  scrollIcon.src = "./assets/images/scroll-to-explore-light.svg";
-} else {
-  scrollIcon.src = "./assets/images/scroll-to-explore.svg";
+exploreIcon.style.opacity = "0";
+arrowUpIcon.style.opacity = "0";
+arrowDownIcon.style.opacity = "0";
+
+let scrollHeight = Math.max(
+  document.body.scrollHeight,
+  document.documentElement.scrollHeight,
+  document.body.offsetHeight,
+  document.documentElement.offsetHeight,
+  document.body.clientHeight,
+  document.documentElement.clientHeight
+);
+
+if (window.scrollY < 300) {
+  exploreIcon.style.opacity = "1";
+  arrowDownIcon.style.opacity = "0";
+  arrowUpIcon.style.opacity = "0";
+}
+
+if (window.scrollY >= 300 && window.scrollY < scrollHeight - 1000) {
+  arrowDownIcon.style.opacity = "1";
+  exploreIcon.style.opacity = "0";
+  arrowUpIcon.style.opacity = "0";
+} else if (window.scrollY > 300) {
+  arrowUpIcon.style.opacity = "1";
+  exploreIcon.style.opacity = "0";
+  arrowDownIcon.style.opacity = "0";
 }
 
 document.addEventListener("scrollend", (e) => {
-  if (window.scrollY == 300) {
-    scrollIcon.src = "./assets/images/arrow-down.svg"
+  if (window.scrollY < 300) {
+    exploreIcon.style.opacity = "1";
+    arrowDownIcon.style.opacity = "0";
+    arrowUpIcon.style.opacity = "0";
   }
 
-  if (window.scrollY == window.innerHeight) {
-    scrollIcon.src = "./assets/images/arrow-down.svg"
+  if (window.scrollY >= 300 && window.scrollY < scrollHeight - 1000) {
+    arrowDownIcon.style.opacity = "1";
+    exploreIcon.style.opacity = "0";
+    arrowUpIcon.style.opacity = "0";
+  } else if (window.scrollY > 300) {
+    arrowUpIcon.style.opacity = "1";
+    exploreIcon.style.opacity = "0";
+    arrowDownIcon.style.opacity = "0";
   }
-
 });
+

@@ -1,7 +1,9 @@
 .dark-theme {
     --color-section-bg: #291554;
     --color-hero-bg: #000000;
-    --color-purple : #4A2794;
+    --color-purple: #4A2794;
+
+    --header-menu-color : white;
 }
 
 .dark-theme,
@@ -12,4 +14,17 @@
 .dark-theme .contact-form input {
     border-color: white;
     color: white;
+}
+
+.dark-theme .scroll-icon,
+.dark-theme .arrow-icon {
+    filter: invert(1);
+}
+
+.dark-theme .attachment-btn img {
+    filter: invert(1);
+}
+
+.dark-theme .menu-toggler img {
+    filter: invert(1);
 }
