@@ -1,0 +1,27 @@
+.dark-theme.menu-open .menu-toggler img{
+    filter: invert(0);
+}
+
+.light-theme.menu-open .logo{
+    color: white;
+}
+
+.light-theme.menu-open .menu-toggler img{
+    filter: invert(1);
+}
+
+.dark-theme.menu-open .logo {
+    color: black;
+}
+
+.menu-open .bottom-bar-icon {
+    display: none;
+}
+
+.menu-open .bottom-bar {
+    z-index: 10;
+}
+
+.menu-open .logo {
+    opacity: 1 !important;
+}

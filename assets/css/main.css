@@ -26,7 +26,7 @@
     --color-orange: #F96233;
     --color-section-bg: white;
     --color-hero-bg: white;
-    --header-menu-color : black;
+    --header-menu-color : #1C2839;
 }
 
 * {
@@ -296,11 +296,10 @@ section {
 }
 
 .how-card {
-    background-color: var(--color-purple);
-    color: white;
     padding: 25px;
     border-radius: 20px;
     margin-bottom: 20px;
+    border: 1px solid #E6E6E6;
 }
 
 .how-card-title {
@@ -568,16 +567,68 @@ button {
     inset: 0;
     background-color: var(--header-menu-color);
     z-index: -10;
-    opacity: 0;
-    transition: all 300ms ease-in-out;
+    /* opacity: 0; */
+    transition: all 500ms linear;
+    clip-path: circle(0.3% at 100% 0);
 }
 
 .header-menu.show {
     z-index: 10;
-    opacity: 1;
+    /* opacity: 1; */
+    clip-path: circle(145% at 100% 0);
 }
 
 header {
     z-index: 100;
 }
 
+.innowink-menu{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.innowink-menu-links{
+    list-style: none;
+    text-align: center;
+}
+
+.innowink-menu-links a {
+    text-decoration: none;
+    font-size: 80px;
+    font-family: "Gilroy Semibold";
+    color: white;
+    transition: all 200ms ease-in-out;
+}
+
+.innowink-menu-links a:hover{
+    color: var(--color-orange);
+}
+
+#cursor{
+    position: relative;
+    z-index: 999999;
+}
+
+.menu-toggler img {
+    background-blend-mode: multiply;
+}
+
+.color-toggle {
+    z-index: 1000;
+    position: relative;
+}
+
+.logo {
+    transition: all 200ms ease-in-out;
+}
+
+#project-card-wrapper {
+    z-index: 5;
+    position: relative;
+}
+
+#project-card .project-card-img-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+}

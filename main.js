@@ -11,25 +11,41 @@ const locomotiveScroll = new LocomotiveScroll();
 
 gsap.registerPlugin(ScrollTrigger);
 
+const menuToggler = document.querySelector('.menu-toggler')
+const headerMenu =document.querySelector(".header-menu")
+
+menuToggler.addEventListener('click', () => {
+  if (headerMenu.classList.contains('show')) {
+    headerMenu.classList.remove("show")
+    document.body.classList.remove("menu-open")
+  }else{
+    headerMenu.classList.add("show")
+    document.body.classList.add("menu-open")
+  }
+})
+
 const projectCards = gsap.utils.toArray("#project-card");
 
-gsap.fromTo(
-  projectCards,
-  {
-    xPercent: 100,
-    ease: "none",
-  },
-  {
-    xPercent: -100 * (projectCards.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#project-card-wrapper",
-      pin: true,
-      scrub: 1,
-      end: () => "+=1000",
+if (projectCards.length > 0) {
+  gsap.fromTo(
+    projectCards,
+    {
+      xPercent: 100,
+      ease: "none",
     },
-  }
-);
+    {
+      xPercent: -100 * (projectCards.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#project-card-wrapper",
+        pin: true,
+        scrub: 1,
+        end: () => "+=1000",
+      },
+    }
+  );
+}
+
 
 const colorToggleBtn = document.querySelector(".color-toggle");
 
@@ -42,6 +58,9 @@ lightIcon.src = "./assets/images/light-mode-icon.svg";
 colorToggleBtn.append(lightIcon);
 
 const theme = localStorage.getItem("theme");
+
+document.body.classList.remove("light-theme");
+document.body.classList.remove("dark-theme");
 document.body.classList.add(theme);
 
 colorToggleBtn.innerHTML = "";
@@ -49,10 +68,10 @@ colorToggleBtn.innerHTML = "";
 const attachBtn = document.querySelector('.attachment-btn')
 if (theme == "dark-theme") {
   colorToggleBtn.append(darkIcon);
-  attachBtn.classList.replace('btn-outline-dark', 'btn-outline-light')
+  attachBtn?.classList.replace('btn-outline-dark', 'btn-outline-light')
 } else {
   colorToggleBtn.append(lightIcon);
-  attachBtn.classList.replace('btn-outline-light', 'btn-outline-dark')
+  attachBtn?.classList.replace('btn-outline-light', 'btn-outline-dark')
 }
 
 colorToggleBtn.addEventListener("click", () => {
@@ -61,12 +80,12 @@ colorToggleBtn.addEventListener("click", () => {
     document.body.classList.replace("light-theme", "dark-theme");
     colorToggleBtn.append(darkIcon);
     localStorage.setItem("theme", "dark-theme");
-    attachBtn.classList.replace('btn-outline-dark', 'btn-outline-light')
+    attachBtn?.classList.replace('btn-outline-dark', 'btn-outline-light')
   } else {
     document.body.classList.replace("dark-theme", "light-theme");
     colorToggleBtn.append(lightIcon);
     localStorage.setItem("theme", "light-theme");
-    attachBtn.classList.replace('btn-outline-light', 'btn-outline-dark')
+    attachBtn?.classList.replace('btn-outline-light', 'btn-outline-dark')
   }
 });
 
@@ -87,17 +106,23 @@ let scrollHeight = Math.max(
   document.documentElement.clientHeight
 );
 
+const logo = document.querySelector('.logo')
+
 if (window.scrollY < 300) {
   exploreIcon.style.opacity = "1";
+  logo.style.opacity = "0";
   arrowDownIcon.style.opacity = "0";
   arrowUpIcon.style.opacity = "0";
+
 }
 
 if (window.scrollY >= 300 && window.scrollY < scrollHeight - 1000) {
   arrowDownIcon.style.opacity = "1";
+  logo.style.opacity = "1";
   exploreIcon.style.opacity = "0";
   arrowUpIcon.style.opacity = "0";
 } else if (window.scrollY > 300) {
+  logo.style.opacity = "1";
   arrowUpIcon.style.opacity = "1";
   exploreIcon.style.opacity = "0";
   arrowDownIcon.style.opacity = "0";
@@ -106,15 +131,18 @@ if (window.scrollY >= 300 && window.scrollY < scrollHeight - 1000) {
 document.addEventListener("scrollend", (e) => {
   if (window.scrollY < 300) {
     exploreIcon.style.opacity = "1";
+    logo.style.opacity = "0";
     arrowDownIcon.style.opacity = "0";
     arrowUpIcon.style.opacity = "0";
   }
 
   if (window.scrollY >= 300 && window.scrollY < scrollHeight - 1000) {
+    logo.style.opacity = "1";
     arrowDownIcon.style.opacity = "1";
     exploreIcon.style.opacity = "0";
     arrowUpIcon.style.opacity = "0";
   } else if (window.scrollY > 300) {
+    logo.style.opacity = "1";
     arrowUpIcon.style.opacity = "1";
     exploreIcon.style.opacity = "0";
     arrowDownIcon.style.opacity = "0";

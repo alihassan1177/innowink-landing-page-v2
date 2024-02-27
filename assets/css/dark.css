@@ -28,3 +28,19 @@
 .dark-theme .menu-toggler img {
     filter: invert(1);
 }
+
+.dark-theme .innowink-menu-links a {
+    color: black;
+}
+.dark-theme .innowink-menu-links a:hover {
+    color: var(--color-orange);
+}
+
+.dark-theme .how-card {
+    background-color: var(--color-purple);
+    border: none;
+}
+
+.dark-theme .logo img {
+    filter: invert(1);
+}
