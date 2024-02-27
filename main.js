@@ -49,13 +49,8 @@ if (projectCards.length > 0) {
 
 const colorToggleBtn = document.querySelector(".color-toggle");
 
-const darkIcon = new Image();
-darkIcon.src = "./assets/images/dark-mode-icon.svg";
-
-const lightIcon = new Image();
-lightIcon.src = "./assets/images/light-mode-icon.svg";
-
-colorToggleBtn.append(lightIcon);
+const darkIcon = document.querySelector('.dark-mode-icon');
+const lightIcon = document.querySelector('.light-mode-icon');
 
 const theme = localStorage.getItem("theme");
 
@@ -63,27 +58,20 @@ document.body.classList.remove("light-theme");
 document.body.classList.remove("dark-theme");
 document.body.classList.add(theme);
 
-colorToggleBtn.innerHTML = "";
-
 const attachBtn = document.querySelector('.attachment-btn')
 if (theme == "dark-theme") {
-  colorToggleBtn.append(darkIcon);
   attachBtn?.classList.replace('btn-outline-dark', 'btn-outline-light')
 } else {
-  colorToggleBtn.append(lightIcon);
   attachBtn?.classList.replace('btn-outline-light', 'btn-outline-dark')
 }
 
 colorToggleBtn.addEventListener("click", () => {
-  colorToggleBtn.innerHTML = "";
   if (document.body.classList.contains("light-theme")) {
     document.body.classList.replace("light-theme", "dark-theme");
-    colorToggleBtn.append(darkIcon);
     localStorage.setItem("theme", "dark-theme");
     attachBtn?.classList.replace('btn-outline-dark', 'btn-outline-light')
   } else {
     document.body.classList.replace("dark-theme", "light-theme");
-    colorToggleBtn.append(lightIcon);
     localStorage.setItem("theme", "light-theme");
     attachBtn?.classList.replace('btn-outline-light', 'btn-outline-dark')
   }

@@ -44,3 +44,11 @@
 .dark-theme .logo img {
     filter: invert(1);
 }
+
+.light-theme .dark-mode-icon{
+    display: none;
+}
+
+.dark-theme .light-mode-icon{
+    display: none;
+}

@@ -566,14 +566,14 @@ button {
     position: fixed;
     inset: 0;
     background-color: var(--header-menu-color);
-    z-index: -10;
+    z-index: 10;
     /* opacity: 0; */
     transition: all 500ms linear;
     clip-path: circle(0.3% at 100% 0);
 }
 
 .header-menu.show {
-    z-index: 10;
+    /* z-index: 10; */
     /* opacity: 1; */
     clip-path: circle(145% at 100% 0);
 }
@@ -591,6 +591,8 @@ header {
 .innowink-menu-links{
     list-style: none;
     text-align: center;
+    z-index: 20;
+    position: relative;
 }
 
 .innowink-menu-links a {
