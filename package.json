@@ -12,9 +12,11 @@
     "vite": "^5.1.4"
   },
   "dependencies": {
+    "@swup/progress-plugin": "^3.1.2",
     "animated-cursor": "^1.2.0",
     "bootstrap": "^5.3.3",
     "gsap": "^3.12.5",
-    "locomotive-scroll": "^5.0.0-beta.11"
+    "locomotive-scroll": "^5.0.0-beta.11",
+    "swup": "^4.6.0"
   }
 }
