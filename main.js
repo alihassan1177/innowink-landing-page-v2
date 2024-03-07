@@ -14,11 +14,78 @@ gsap.registerPlugin(ScrollTrigger);
 const menuToggler = document.querySelector(".menu-toggler");
 const headerMenu = document.querySelector(".header-menu");
 
-const getQuoteBtn = document
-  .querySelector("#get-quote-btn")
-  .addEventListener("click", (e) => {
-    window.location.href = "/contact.html"
+document.querySelector("#get-quote-btn").addEventListener("click", (e) => {
+  window.location.href = "/contact.html";
+});
+
+const budgets = ["1-5k", "5-10k", "10-15k", "20-50k", "60-100k", "+100k"];
+const types = [
+  "Branding",
+  "Web Design",
+  "Site from Scratch",
+  "UI/UX",
+  "Application Design",
+  "Web Animation",
+  "HTML/CSS Coding",
+  "Front-end Development",
+  "Back-end Development",
+];
+
+const tagWrappers = document.querySelectorAll(".tags-wrapper");
+
+tagWrappers.forEach((wrapper) => {
+  if (wrapper.id == "budget-tags-wrapper") {
+    budgets.forEach((tag) => {
+      const button = document.createElement("button");
+      button.classList.add(
+        "btn",
+        "btn-lg",
+        "rounded-pill",
+        "btn-outline-dark",
+        "budget-tag-button",
+        "tag-button"
+      );
+      button.innerText = tag;
+      button.value = tag;
+      wrapper.append(button);
+    });
+  }
+
+  if (wrapper.id == "type-tags-wrapper") {
+    types.forEach((tag) => {
+      const button = document.createElement("button");
+      button.classList.add(
+        "btn",
+        "btn-lg",
+        "rounded-pill",
+        "btn-outline-dark",
+        "type-tag-button",
+        "tag-button"
+      );
+      button.innerText = tag;
+      button.value = tag;
+      wrapper.append(button);
+    });
+  }
+});
+
+const budgetTagButtons = document.querySelectorAll(".budget-tag-button");
+const typeTagButtons = document.querySelectorAll(".type-tag-button");
+
+budgetTagButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    budgetTagButtons.forEach((i) => i.classList.remove("active"));
+
+    btn.classList.toggle("active");
   });
+});
+
+typeTagButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    // typeTagButtons.forEach(i => i.classList.remove("active"))
+    btn.classList.toggle("active");
+  });
+});
 
 gsap.to(".circle-wrapper", {
   yPercent: -100,
@@ -73,6 +140,7 @@ const theme = localStorage.getItem("theme");
 document.body.classList.remove("light-theme");
 document.body.classList.remove("dark-theme");
 document.body.classList.add(theme);
+document.body.dataset.theme = theme;
 
 const attachBtn = document.querySelector(".attachment-btn");
 if (theme == "dark-theme") {
@@ -85,12 +153,16 @@ colorToggleBtn.addEventListener("click", () => {
   if (document.body.classList.contains("light-theme")) {
     document.body.classList.replace("light-theme", "dark-theme");
     localStorage.setItem("theme", "dark-theme");
+    document.body.dataset.theme = "dark-theme";
     attachBtn?.classList.replace("btn-outline-dark", "btn-outline-light");
   } else {
     document.body.classList.replace("dark-theme", "light-theme");
     localStorage.setItem("theme", "light-theme");
+    document.body.dataset.theme = "light-theme";
     attachBtn?.classList.replace("btn-outline-light", "btn-outline-dark");
   }
+  document.body.dispatchEvent(event);
+
 });
 
 const exploreIcon = document.querySelector(".explore-icon");
@@ -151,3 +223,23 @@ document.addEventListener("scrollend", (e) => {
     arrowDownIcon.style.opacity = "0";
   }
 });
+
+const event = new Event("theme", { theme: document.body.dataset.theme });
+document.body.addEventListener(
+  "theme",
+  (e) => {
+    let currentTheme = e.target.dataset.theme;
+    if (currentTheme == "light-theme") {
+      document.querySelectorAll(".tag-button").forEach((btn) => {
+        btn.classList.replace("btn-outline-light", "btn-outline-dark");
+      });
+    } else {
+      document.querySelectorAll(".tag-button").forEach((btn) => {
+        btn.classList.replace("btn-outline-dark", "btn-outline-light");
+      });
+    }
+  },
+  false
+);
+
+document.body.dispatchEvent(event);

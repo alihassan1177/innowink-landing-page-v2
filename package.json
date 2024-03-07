@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@swup/progress-plugin": "^3.1.2",
+    "@swup/scripts-plugin": "^2.1.0",
     "animated-cursor": "^1.2.0",
     "bootstrap": "^5.3.3",
     "gsap": "^3.12.5",
