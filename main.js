@@ -2,12 +2,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import LocomotiveScroll from "locomotive-scroll";
 import AnimatedCursor from "animated-cursor";
-import Swup from 'swup';
-import SwupProgressPlugin from '@swup/progress-plugin';
-
-const swup = new Swup({
-  plugins : [new SwupProgressPlugin()]
-})
 
 const ac = AnimatedCursor();
 
@@ -140,10 +134,3 @@ document.addEventListener("scrollend", (e) => {
 });
 
 
-swup.hooks.on('page:view', (visit) => {
-  if (visit.to.url == "index.html" || visit.to.url == "/") {
-    document.getElementById("projects").style.display = "block"
-  }else{
-    document.getElementById("projects").style.display = "none"
-  }
-});
