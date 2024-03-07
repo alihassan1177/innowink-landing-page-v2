@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Innowink</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
+    <link rel="stylesheet" href="./assets/css/minimal.css">
+
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/locomotive-scroll/dist/locomotive-scroll.css"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/dark.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+    <link rel="stylesheet" href="./assets/css/menu.css" />
+  </head>
+  <body class="light-theme">
+    <header class="header">
+      <div class="container-fluid">
+        <nav
+          class="header-nav d-flex align-items-center justify-content-between"
+        >
+          <p class="logo opacity-100">
+            <a class="text-decoration-none me-3" href="./index.html"
+            ><img
+              style="transform: rotate(90deg)"
+              src="./assets/images/arrow-down.svg"
+              alt="back"
+          /></a>
+            Innowink</p>
+          <button
+            style="font-family: Gilroy Semibold"
+            id="get-quote-btn"
+            class="btn text-white rounded-pill bg-orange"
+          >
+            Get a quote
+          </button>
+          <button style="display: none;" class="menu-toggler">
+            <img src="./assets/images/menu-icon.svg" alt="" />
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <div style="display: none;" class="header-menu">
+      <nav class="innowink-menu">
+        <ul class="innowink-menu-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Our Work</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <section id="swup" id="contact-form" class="transition-fade container section-spacing">
+        <h2 class="text-center page-heading text-dark">Get in touch</h2>
+        <p style="font-size: 24px" class="text-center page-subheading">
+          I need
+        </p>
+        <div
+          style="gap: 10px; max-width: 930px"
+          class="mx-auto d-flex flex-wrap justify-content-center"
+        ></div>
+        <div class="row contact-form pt-5 gy-4 gx-5">
+          <div class="col-md-6">
+            <input placeholder=" " type="text" name="name" />
+            <label>Your Name</label>
+          </div>
+          <div class="col-md-6">
+            <input placeholder=" " type="text" name="email" />
+            <label>Your Email</label>
+          </div>
+          <div class="col-12">
+            <input placeholder=" " type="text" name="message" />
+            <label>About your project</label>
+          </div>
+        </div>
+        <div class="text-center mb-5">
+          <button
+            style="max-width: 250px"
+            class="attachment-btn position-relative btn btn-outline-dark btn-lg rounded-pill"
+          >
+            <input
+              style="opacity: 0; inset: 0; cursor: pointer"
+              class="position-absolute"
+              type="file"
+              name="file"
+              id="file"
+            />
+            <img src="./assets/images/attachment.svg" alt="Icon" />
+            &nbsp;
+            <span
+              style="
+                pointer-events: none;
+                font-size: 18px;
+                font-family: Gilroy Medium;
+              "
+            >
+              Add attachment
+            </span>
+          </button>
+        </div>
+        <p style="font-size: 24px" class="text-center page-subheading">
+          Budget (USD)
+        </p>
+        <div
+          style="max-width: 930px; gap: 10px"
+          class="mx-auto d-flex flex-wrap justify-content-center"
+        ></div>
+
+        <div class="text-center mt-5">
+          <button
+            style="font-size: 18px; font-family: Gilroy Medium"
+            class="text-white rounded-pill bg-orange btn btn-lg"
+          >
+            Send Request
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div class="bottom-bar">
+      <div class="d-flex align-items-center justify-content-between">
+        <button class="color-toggle btn">
+          <img
+            src="./assets/images/dark-mode-icon.svg"
+            class="dark-mode-icon"
+            alt="Dark Mode"
+          />
+          <img
+            src="./assets/images/light-mode-icon.svg"
+            class="light-mode-icon"
+            alt="Light Mode"
+          />
+        </button>
+
+        <div class="scroll-icon-wrapper">
+          <img
+            src="./assets/images/scroll-to-explore.svg"
+            class="explore-icon bottom-bar-icon scroll-icon anim-rotate"
+            alt=""
+          />
+          <img
+            src="./assets/images/arrow-up.svg"
+            class="arrow-up-icon bottom-bar-icon arrow-icon"
+            alt=""
+          />
+          <img
+            src="./assets/images/arrow-down.svg"
+            class="arrow-down-icon bottom-bar-icon arrow-icon"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="cursor">
+      <div id="cursor-outer"></div>
+      <div id="cursor-inner"></div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+
+  </body>
+</html>

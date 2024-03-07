@@ -5,7 +5,8 @@ module.exports = {
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        project_trio: resolve(__dirname, 'project-trio.html')
+        project_trio: resolve(__dirname, 'project-trio.html'),
+        contact: resolve(__dirname, 'contact.html'),
       }
     }
   }
