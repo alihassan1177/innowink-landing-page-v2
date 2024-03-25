@@ -1,199 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trio | Innowink</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
-    <link rel="stylesheet" href="./assets/css/minimal.css">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trio | Innowink</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="node_modules/locomotive-scroll/dist/locomotive-scroll.css"
-    />
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="stylesheet" href="./assets/css/dark.css" />
-    <link rel="stylesheet" href="./assets/css/responsive.css" />
-    <link rel="stylesheet" href="./assets/css/menu.css" />
-  </head>
-  <body class="light-theme">
-    <header class="header">
-      <div class="container-fluid">
-        <nav
-          class="header-nav d-flex align-items-center justify-content-between"
-        >
-          <p class="logo opacity-100">
-            <a class="text-decoration-none me-3" href="./index.html"
-              ><img
-                style="transform: rotate(90deg)"
-                src="./assets/images/arrow-down.svg"
-                alt="back"
-            /></a>
-            Innowink
-          </p>
-          <button
-            style="font-family: Gilroy Semibold"
-            class="btn text-white rounded-pill bg-orange"
-            id="get-quote-btn"
-          >
-            Get a quote
-          </button>
-          <button style="display: none;" class="menu-toggler">
-            <img src="./assets/images/menu-icon.svg" alt="" />
-          </button>
-        </nav>
-      </div>
-    </header>
-    <div style="display: none;" class="header-menu">
-      <nav class="innowink-menu">
-        <ul class="innowink-menu-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Our Work</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
+  <link rel="stylesheet" href="./assets/css/minimal.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="node_modules/locomotive-scroll/dist/locomotive-scroll.css" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  <link rel="stylesheet" href="./assets/css/dark.css" />
+  <link rel="stylesheet" href="./assets/css/responsive.css" />
+  <link rel="stylesheet" href="./assets/css/menu.css" />
+</head>
+
+<body class="light-theme">
+  <header class="header">
+    <div class="container-fluid">
+      <nav class="header-nav d-flex align-items-center justify-content-between">
+        <p class="logo opacity-100">
+          <a class="text-decoration-none me-3" href="./index.html"><img style="transform: rotate(90deg)"
+              src="./assets/images/arrow-down.svg" alt="back" /></a>
+          Innowink
+        </p>
+        <button style="font-family: Gilroy Semibold" class="btn text-white rounded-pill bg-orange" id="get-quote-btn">
+          Get a quote
+        </button>
+        <button style="display: none;" class="menu-toggler">
+          <img src="./assets/images/menu-icon.svg" alt="" />
+        </button>
       </nav>
     </div>
-    <main id="swup" class="transition-fade">
-      <section class="container section-spacing">
-        <p class="lead text-center project-subheading">Trio</p>
-        <h3 class="text-center my-4 project-heading">Explore your true style</h3>
-        <p class="lead text-center mb-5 project-text">
-          Trio, your go-to Casual wear shop, offers a seamless and user-friendly
-          experience. As a responsive website, Trio effortlessly adapts to
-          various devices, ensuring you can shop for the finest casual wear
-          wherever you are.
-        </p>
-        <img
-          src="./assets/images/trio-case-study-banner.png"
-          class="img-fluid my-5"
-          alt="Trio Banner"
-        />
-        <p class="lead text-center project-subheading">Expectaion</p>
-        <p class="lead text-center project-heading">
-          Creating the brand identity, logo design, website design, and web
-          development for a trio of the brand was requested.
-        </p>
-        <div class="text-center">
-          <a
-            class="d-inline-block text-decoration-none project-card-btn opacity-100"
-            style="padding: 8px 20px; font-size: 14px"
-            href="https://www.trio-clothing.pk/"
-            target="_blank"
-            ><span class="me-2" style="font-family: Gilroy SemiBold"
-              >View Live Web</span
-            >
-            <i class="fa fa-arrow-right"></i
-          ></a>
+  </header>
+  <div style="display: none;" class="header-menu">
+    <nav class="innowink-menu">
+      <ul class="innowink-menu-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our Work</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <main id="swup" class="transition-fade">
+    <section class="container section-spacing">
+      <p class="lead text-center project-subheading">Trio</p>
+      <h3 class="text-center my-4 project-heading">Explore your true style</h3>
+      <p class="lead text-center mb-5 project-text">
+        Trio, your go-to Casual wear shop, offers a seamless and user-friendly
+        experience. As a responsive website, Trio effortlessly adapts to
+        various devices, ensuring you can shop for the finest casual wear
+        wherever you are.
+      </p>
+      <img src="./assets/images/trio-case-study-banner.png" class="img-fluid my-5" alt="Trio Banner" />
+      <p class="lead text-center project-subheading">Expectaion</p>
+      <p class="lead text-center project-heading">
+        Creating the brand identity, logo design, website design, and web
+        development for a trio of the brand was requested.
+      </p>
+      <div class="text-center">
+        <a class="d-inline-block text-decoration-none project-card-btn opacity-100"
+          style="padding: 8px 20px; font-size: 14px" href="https://www.trio-clothing.pk/" target="_blank"><span
+            class="me-2" style="font-family: Gilroy SemiBold">View Live Web</span>
+          <i class="fa fa-arrow-right"></i></a>
+      </div>
+
+      <div class="row g-5 mt-5 mb-5">
+        <div class="col-md-5">
+          <img style="height: 700px;" class="w-100" src="./assets/images/grid-image-1.png" alt="" />
         </div>
 
-        <div class="row g-5 mt-5 mb-5">
-          <div class="col-md-5">
-            <img
-              style="height: 700px;"
-              class="w-100"
-              src="./assets/images/grid-image-1.png"
-              alt=""
-            />
-          </div>
-
-          <div class="col-md-7">
-            <img class="w-100"  
-            style="height: 700px;" src="./assets/images/grid-image-2.png" alt="" />
-          </div>
-
-          <div class="col-md-7">
-            <img               style="height: 700px;" class="w-100" src="./assets/images/grid-image-3.png" alt="" />
-          </div>
-
-          <div class="col-md-5">
-            <img
-              class="w-100"
-              style="height: 700px;"
-              src="./assets/images/grid-image-4.png"
-              alt=""
-            />
-          </div>
+        <div class="col-md-7">
+          <img class="w-100" style="height: 700px;" src="./assets/images/grid-image-2.png" alt="" />
         </div>
 
-        <h3 class="text-center mt-5 project-subheading">
-          Website Front-End and Backend Development
-        </h3>
-        <p class="text-center my-4 project-heading">
-          Our website was created by shopify with React to centralized data
-          management in the front-end technology. With React as the front-end
-          technology, we were able to create an interactive storefront and
-          modernize the website to maximize performance.
-        </p>
-
-        <div class="row mt-5">
-          <div class="col-md-6">
-            <img src="./assets/images/trio-bottom-1.png" class="w-100" alt="" />
-          </div>
-
-          <div class="col-md-6">
-            <img
-              src="./assets/images/trio-bottom-2.png"
-              class="w-100 mt-md-5 pt-md-5"
-              alt=""
-            />
-          </div>
+        <div class="col-md-7">
+          <img style="height: 700px;" class="w-100" src="./assets/images/grid-image-3.png" alt="" />
         </div>
-      </section>
-    </main>
 
-    <div class="bottom-bar">
-      <div class="d-flex align-items-center justify-content-between">
-        <button class="color-toggle btn">
-          <img
-            src="./assets/images/dark-mode-icon.svg"
-            class="dark-mode-icon"
-            alt="Dark Mode"
-          />
-          <img
-            src="./assets/images/light-mode-icon.svg"
-            class="light-mode-icon"
-            alt="Light Mode"
-          />
-        </button>
-
-        <div class="scroll-icon-wrapper">
-          <img
-            src="./assets/images/scroll-to-explore.svg"
-            class="explore-icon bottom-bar-icon scroll-icon anim-rotate"
-            alt=""
-          />
-          <img
-            src="./assets/images/arrow-up.svg"
-            class="arrow-up-icon bottom-bar-icon arrow-icon"
-            alt=""
-          />
-          <img
-            src="./assets/images/arrow-down.svg"
-            class="arrow-down-icon bottom-bar-icon arrow-icon"
-            alt=""
-          />
+        <div class="col-md-5">
+          <img class="w-100" style="height: 700px;" src="./assets/images/grid-image-4.png" alt="" />
         </div>
       </div>
-    </div>
 
-    <div id="cursor">
-      <div id="cursor-outer"></div>
-      <div id="cursor-inner"></div>
-    </div>
+      <h3 class="text-center mt-5 project-subheading">
+        Website Front-End and Backend Development
+      </h3>
+      <p class="text-center my-4 project-heading">
+        Our website was created by shopify with React to centralized data
+        management in the front-end technology. With React as the front-end
+        technology, we were able to create an interactive storefront and
+        modernize the website to maximize performance.
+      </p>
 
-    <script type="module" src="/main.js"></script>
-  </body>
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <img src="./assets/images/trio-bottom-1.png" class="w-100" alt="" />
+        </div>
+
+        <div class="col-md-6">
+          <img src="./assets/images/trio-bottom-2.png" class="w-100 mt-md-5 pt-md-5" alt="" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="bottom-bar">
+    <div class="d-flex align-items-center justify-content-between">
+      <button class="color-toggle btn">
+        <img src="./assets/images/dark-mode-icon.svg" class="dark-mode-icon" alt="Dark Mode" />
+        <img src="./assets/images/light-mode-icon.svg" class="light-mode-icon" alt="Light Mode" />
+      </button>
+
+      <div class="scroll-icon-wrapper">
+        <img src="./assets/images/scroll-to-explore.svg" class="explore-icon bottom-bar-icon scroll-icon anim-rotate"
+          alt="" />
+        <img src="./assets/images/arrow-up.svg" class="arrow-up-icon bottom-bar-icon arrow-icon" alt="" />
+        <img src="./assets/images/arrow-down.svg" class="arrow-down-icon bottom-bar-icon arrow-icon" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div id="cursor">
+    <div id="cursor-outer"></div>
+    <div id="cursor-inner"></div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>

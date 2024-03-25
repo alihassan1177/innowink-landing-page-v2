@@ -135,7 +135,7 @@ if (projectCards.length > 0) {
 
 const colorToggleBtn = document.querySelector(".color-toggle");
 
-const theme = localStorage.getItem("theme");
+const theme = localStorage.getItem("theme") ?? "light-theme";
 
 document.body.classList.remove("light-theme");
 document.body.classList.remove("dark-theme");
