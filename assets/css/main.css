@@ -27,7 +27,7 @@
     --color-section-bg: white;
     --color-hero-bg: white;
     --header-menu-color: #1C2839;
-    --color-pace : #291554;
+    --color-pace: #291554;
 }
 
 * {
@@ -636,19 +636,28 @@ header {
     overflow: hidden;
 }
 
-/* Define a transition duration during page visits */
-html.is-changing .transition-fade {
-    transition: opacity 0.25s;
-    opacity: 1;
+.project-heading {
+    font-size: 36px;
+    font-family: "Gilroy Medium";
 }
 
-/* Define the styles for the unloaded pages */
-html.is-animating .transition-fade {
-    opacity: 0;
+.project-subheading {
+    font-size: 24px;
+    font-family: "Gilroy Regular";
 }
 
-.swup-progress-bar {
-    height: 4px;
-    background-color: blue;
-    z-index: 100000;
+.project-text {
+    font-size: 24px;
+    font-family: "Gilroy Medium";
+}
+
+@media (min-width: 1400px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1440px;
+    }
 }
